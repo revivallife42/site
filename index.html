@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Рамиль Абязов — две встречи с духовным наставником</title>
+<meta name="description" content="Две онлайн-встречи по 1,5 часа: вы снова услышите, чего сами хотите, и найдёте слова, чтобы сказать об этом партнёру, не разрушая отношения.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #17363F;
+    --teal-soft: #1F4450;
+    --cream: #F4EEE3;
+    --milk: #FAF6EF;
+    --gold: #B8863B;
+    --gold-deep: #96692A;
+    --mist: #789BB0;
+    --text: #17363F;
+    --text-soft: rgba(23, 54, 63, 0.78);
+    --line: rgba(23, 54, 63, 0.14);
+    --wrap: 1120px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--milk);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  section { padding: 120px 0; }
+
+  h1, h2, h3 { font-weight: 300; line-height: 1.15; }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.01em;
+    max-width: 18em;
+  }
+
+  p { max-width: 34em; }
+  p + p { margin-top: 1.1em; }
+
+  .accent { color: var(--gold); font-weight: 400; }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .dark .eyebrow { color: var(--gold); }
+
+  .btn {
+    display: inline-block;
+    padding: 18px 40px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--teal);
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .btn:hover, .btn:focus-visible { background: transparent; color: var(--gold); }
+
+  .dark { background: var(--teal); color: var(--milk); }
+
+  /* Шапка */
+  .header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 28px 0;
+  }
+  .header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--milk);
+  }
+  .nav { display: flex; gap: 36px; }
+  .nav a {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: rgba(250, 246, 239, 0.75);
+    transition: color 0.3s ease;
+  }
+  .nav a:hover { color: var(--gold); }
+
+  /* Первый экран */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: max(100vh, 700px);
+    padding: 0;
+  }
+  .hero-art {
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(23, 54, 63, 0.82) 0%, rgba(23, 54, 63, 0.4) 48%, rgba(23, 54, 63, 0) 75%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 70px;
+  }
+  .hero-text { max-width: 640px; }
+  .hero-art .shimmer rect { animation: shimmer 7s ease-in-out infinite; }
+  .hero-art .shimmer rect:nth-child(2n) { animation-delay: 1.4s; }
+  .hero-art .shimmer rect:nth-child(3n) { animation-delay: 2.8s; }
+  @keyframes shimmer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.2vw, 4.3rem);
+    letter-spacing: -0.015em;
+  }
+  .hero .lead {
+    margin-top: 28px;
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    color: rgba(250, 246, 239, 0.8);
+    max-width: 26em;
+  }
+  .hero .btn { margin-top: 44px; }
+
+  .facts {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(250, 246, 239, 0.2);
+  }
+  .facts .wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .fact { padding: 34px 0; }
+  .fact + .fact { padding-left: 40px; border-left: 1px solid rgba(250, 246, 239, 0.14); }
+  .fact b {
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--gold);
+  }
+  .fact span {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(250, 246, 239, 0.7);
+  }
+
+  /* Для кого */
+  .for-whom { background: var(--cream); }
+  .for-whom .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .for-whom p { font-size: 1.15rem; color: var(--text-soft); }
+  .for-whom .quote {
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-style: italic;
+    line-height: 1.2;
+    padding-left: 32px;
+    border-left: 1px solid var(--gold);
+    color: var(--text);
+  }
+  .for-whom p strong { font-weight: 400; color: var(--text); }
+
+  /* Почему */
+  .why .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+  }
+  .why p { color: var(--text-soft); }
+  .why .highlight {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 1.5rem;
+    line-height: 1.35;
+    color: var(--text);
+  }
+
+  /* Как я работаю */
+  .how { text-align: center; }
+  .how .eyebrow { justify-content: center; }
+  .how .eyebrow::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .how h2 {
+    margin: 0 auto;
+    max-width: 22em;
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+    line-height: 1.3;
+  }
+  .how .voice {
+    margin: 56px auto 0;
+    font-size: 1.25rem;
+    color: rgba(250, 246, 239, 0.8);
+  }
+  .how .voice em { display: block; margin-top: 10px; font-style: italic; color: var(--mist); }
+
+  /* Что будет */
+  .steps .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 64px;
+  }
+  .card {
+    padding: 52px 48px 56px;
+    background: var(--cream);
+    border-top: 2px solid var(--gold);
+  }
+  .card .num {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .card h3 { margin: 14px 0 22px; font-size: 2.4rem; }
+  .card p { color: var(--text-soft); }
+
+  /* С чем вы уйдёте */
+  .results { background: var(--cream); }
+  .results ol {
+    list-style: none;
+    margin-top: 56px;
+    counter-reset: item;
+  }
+  .results li {
+    counter-increment: item;
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    align-items: baseline;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    font-size: 1.3rem;
+    line-height: 1.45;
+  }
+  .results li:last-child { border-bottom: 1px solid var(--line); }
+  .results li::before {
+    content: counter(item, decimal-leading-zero);
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--gold);
+  }
+  .results li span { max-width: 30em; }
+  .results .name { white-space: nowrap; letter-spacing: 0.06em; color: var(--gold-deep); font-weight: 400; }
+
+  /* Призыв */
+  .cta { text-align: center; padding: 140px 0; }
+  .cta .eyebrow { justify-content: center; }
+  .cta .eyebrow::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .cta h2 { margin: 0 auto; max-width: 16em; }
+  .cta p { margin: 28px auto 0; color: rgba(250, 246, 239, 0.8); }
+  .cta .btn { margin-top: 48px; }
+
+  .footer {
+    padding: 32px 0;
+    background: var(--teal);
+    border-top: 1px solid rgba(250, 246, 239, 0.14);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: rgba(250, 246, 239, 0.55);
+    text-align: center;
+  }
+
+  /* Плавное появление при прокрутке */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .js .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 860px) {
+    body { font-size: 18px; }
+    .wrap { padding: 0 22px; }
+    section { padding: 80px 0; }
+    .nav { display: none; }
+    .hero { min-height: 0; }
+    .hero::before { display: none; }
+    .hero-art {
+      width: auto;
+      height: 540px;
+      aspect-ratio: 1440 / 900;
+      transform: translateX(-43%);
+    }
+    .hero-content { padding: 120px 0 300px; }
+    .fact { padding: 24px 0; }
+    .fact + .fact { padding-left: 18px; }
+    .fact b { font-size: 1.5rem; }
+    .fact span { font-size: 11px; letter-spacing: 0.12em; }
+    .for-whom .wrap, .why .cols, .steps .cards { grid-template-columns: 1fr; gap: 40px; }
+    .why .cols, .steps .cards, .results ol { margin-top: 40px; }
+    .for-whom .quote { padding-left: 22px; }
+    .card { padding: 40px 28px 44px; }
+    .results li { grid-template-columns: 56px 1fr; font-size: 1.15rem; padding: 24px 0; }
+    .results li::before { font-size: 1.5rem; }
+    .cta { padding: 96px 0; }
+    .btn { padding: 17px 30px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-art .shimmer rect { animation: none; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#top">Рамиль Абязов</a>
+    <nav class="nav">
+      <a href="#for-whom">Для кого</a>
+      <a href="#how">Как я работаю</a>
+      <a href="#steps">Что будет</a>
+      <a href="#results">Результат</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero dark">
+    <!-- Пейзаж: рассвет над морем и горами -->
+    <svg class="hero-art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#17363F"/>
+          <stop offset="0.4" stop-color="#1F4854"/>
+          <stop offset="0.6" stop-color="#4B7688"/>
+          <stop offset="0.72" stop-color="#9DB5BF"/>
+          <stop offset="0.76" stop-color="#E4DCCB"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="1040" cy="560" r="460" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#F4EEE3" stop-opacity="0.75"/>
+          <stop offset="0.3" stop-color="#D9B272" stop-opacity="0.32"/>
+          <stop offset="1" stop-color="#B8863B" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="sun" cx="1040" cy="548" r="64" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#FAF6EF"/>
+          <stop offset="1" stop-color="#EBD3A4"/>
+        </radialGradient>
+        <linearGradient id="far" x1="0" y1="470" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#5F8598"/>
+          <stop offset="1" stop-color="#A9BEC6"/>
+        </linearGradient>
+        <linearGradient id="mid" x1="0" y1="540" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#386170"/>
+          <stop offset="1" stop-color="#6B90A0"/>
+        </linearGradient>
+        <linearGradient id="near" x1="0" y1="560" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#1C404B"/>
+          <stop offset="1" stop-color="#2F5766"/>
+        </linearGradient>
+        <linearGradient id="sea" x1="0" y1="680" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#557F90"/>
+          <stop offset="0.25" stop-color="#28505D"/>
+          <stop offset="1" stop-color="#17363F"/>
+        </linearGradient>
+        <linearGradient id="mist" x1="0" y1="610" x2="0" y2="700" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#F4EEE3" stop-opacity="0"/>
+          <stop offset="0.75" stop-color="#F4EEE3" stop-opacity="0.32"/>
+          <stop offset="1" stop-color="#F4EEE3" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1440" height="900" fill="url(#sky)"/>
+      <rect width="1440" height="900" fill="url(#glow)"/>
+      <circle cx="1040" cy="548" r="64" fill="url(#sun)"/>
+
+      <path fill="url(#far)" d="M0,560 L90,520 L180,548 L290,470 L380,520 L470,490 L560,540 L660,500 L760,548 L860,520 L940,566 L1040,580 L1130,562 L1220,500 L1300,530 L1380,480 L1440,510 L1440,680 L0,680 Z"/>
+      <path fill="url(#mid)" d="M0,600 L80,570 L170,590 L260,540 L340,580 L430,550 L520,600 L620,575 L720,620 L820,604 L900,640 L1000,656 L1100,652 L1180,622 L1260,580 L1340,610 L1440,560 L1440,680 L0,680 Z"/>
+      <path fill="url(#near)" d="M0,590 L70,560 L150,600 L240,572 L330,622 L420,640 L520,662 L640,680 L0,680 Z"/>
+      <path fill="url(#near)" d="M1440,610 L1370,632 L1300,650 L1220,668 L1150,680 L1440,680 Z"/>
+
+      <rect y="680" width="1440" height="220" fill="url(#sea)"/>
+      <rect y="610" width="1440" height="90" fill="url(#mist)"/>
+
+      <g class="shimmer" fill="#EBD3A4">
+        <rect x="975" y="690" width="130" height="2.5" rx="1.25" opacity="0.7"/>
+        <rect x="960" y="703" width="160" height="2.5" rx="1.25" opacity="0.55"/>
+        <rect x="990" y="718" width="100" height="2.5" rx="1.25" opacity="0.5"/>
+        <rect x="950" y="736" width="180" height="2" rx="1" opacity="0.38"/>
+        <rect x="1000" y="757" width="80" height="2" rx="1" opacity="0.32"/>
+        <rect x="970" y="781" width="140" height="2" rx="1" opacity="0.22"/>
+        <rect x="1010" y="809" width="60" height="2" rx="1" opacity="0.16"/>
+        <rect x="985" y="842" width="110" height="2" rx="1" opacity="0.1"/>
+      </g>
+
+      <g fill="none" stroke="#FAF6EF" stroke-width="1.6" stroke-linecap="round" opacity="0.55">
+        <path d="M786,402 q8,-9 16,0 q8,-9 16,0"/>
+        <path d="M836,428 q6,-7 12,0 q6,-7 12,0"/>
+        <path d="M758,436 q5,-6 10,0 q5,-6 10,0"/>
+      </g>
+    </svg>
+
+    <div class="hero-content">
+      <div class="wrap">
+        <div class="hero-text">
+          <div class="eyebrow">Две встречи с духовным наставником</div>
+          <h1>За две встречи вы снова услышите, чего <span class="accent">сами</span> хотите</h1>
+          <p class="lead">И найдёте слова, чтобы сказать об этом партнёру, не разрушая отношения.</p>
+          <a class="btn" href="#contact">Записаться</a>
+        </div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="wrap">
+        <div class="fact"><b>2 встречи</b><span>Увидеть и попробовать</span></div>
+        <div class="fact"><b>1,5 часа</b><span>Каждая встреча</span></div>
+        <div class="fact"><b>Онлайн</b><span>Из любого города</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="for-whom" id="for-whom">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Для кого</div>
+        <p class="quote">«Я уже не знаю, чего хочу сама»</p>
+      </div>
+      <div class="reveal">
+        <p>Для тех, кто в отношениях привык подстраиваться, сглаживать углы, быть удобным, но однажды заметил в себе эту мысль.</p>
+        <p><strong>И особенно для тех, кто уже много понял про себя, а легче не стало.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Почему так происходит</div>
+        <h2>Почему привычные способы перестают работать</h2>
+      </div>
+      <div class="cols">
+        <div class="reveal">
+          <p>Психическое современной женщины хочет несравнимо больше, чем 1000 лет назад: любви, свободы, заботы, реализации, смысла, и всё это сразу. Желаний стало так много, что за ними сложно успеть.</p>
+          <p>Сюда же постоянное давление со стороны общества: что должна и чего не должна делать женщина. Возникает естественное чувство, что вы потерялись: внутри слишком громко, чтобы расслышать своё. Где же та самая свобода выбора и воли?</p>
+        </div>
+        <div class="reveal">
+          <p>Психология может объяснить, откуда это взялось. Но этого мало. Многие замечают: понимать причины и жить иначе — это разные вещи.</p>
+          <p class="highlight">Ответ на вопрос «чего я хочу на самом деле» лежит глубже, чем разбор прошлого.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how dark" id="how">
+    <div class="wrap reveal">
+      <div class="eyebrow">Как я работаю</div>
+      <h2>Мы начинаем с того, что лежит на поверхности, с вашей живой ситуации, и идём глубже: туда, где человек встречается с чем-то несоизмеримо большим, чем он сам и его трудности.</h2>
+      <p class="voice">Там становится слышен собственный голос.<em>Он никуда не исчез, его просто давно не слушали.</em></p>
+    </div>
+  </section>
+
+  <section class="steps" id="steps">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Что будет</div>
+        <h2>Две встречи, два шага</h2>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="num">Встреча 1</div>
+          <h3>Увидеть</h3>
+          <p>Вы поймёте, где именно и в какой момент теряете себя. В спокойной обстановке, без оценок, мы дадим место тишине, в которой становится слышно одно ваше давно отложенное желание.</p>
+        </article>
+        <article class="card reveal">
+          <div class="num">Встреча 2</div>
+          <h3>Попробовать</h3>
+          <p>Вы подберёте слова для разговора с партнёром: как сказать «я хочу» или «нет» спокойно, из внутренней опоры, без ссоры и без вины.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="results" id="results">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Результат</div>
+        <h2>С чем вы уйдёте</h2>
+      </div>
+      <ol>
+        <li class="reveal"><span>Понимание, как устроена ваша «потеря себя», вместо смутного чувства, что с вами что-то не так.</span></li>
+        <li class="reveal"><span>Одно своё желание, названное вслух и отделённое от чужих.</span></li>
+        <li class="reveal"><span>Как рассказать партнёру о своих желаниях и при этом быть услышанной.</span></li>
+        <li class="reveal"><span>Поддержка в личном чате без оценок и наставлений.</span></li>
+        <li class="reveal"><span>Простой способ возвращать внимание к себе, которым можно пользоваться каждый день.</span></li>
+        <li class="reveal"><span>Ясность, хотите ли вы идти глубже, в раскрытие сути себя, того самого истинного ощущения блаженства и восторга, что даёт полный тренинг <span class="name">«ВКУС ЖИЗНИ»</span>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta dark" id="contact">
+    <div class="wrap reveal">
+      <div class="eyebrow">Записаться</div>
+      <h2>Напишите мне слово <span class="accent">«ДЕМО»</span> в директ</h2>
+      <p>Две онлайн-встречи по 1,5 часа. Я расскажу, когда ближайшая.</p>
+      <!-- ЗАМЕНИТЬ: вместо # вставить ссылку на директ -->
+      <a class="btn" href="#">Написать «ДЕМО»</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">© 2026 Рамиль Абязов</div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+</script>
+
+</body>
+</html>
