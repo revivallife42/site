@@ -216,33 +216,179 @@
   }
   .for-whom p { font-size: 1.15rem; color: var(--text-soft); }
   .for-whom .quote {
-    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-size: clamp(1.8rem, 3.4vw, 2.7rem);
     font-style: italic;
-    line-height: 1.2;
+    line-height: 1.25;
     padding-left: 32px;
     border-left: 1px solid var(--gold);
     color: var(--text);
   }
   .for-whom p strong { font-weight: 400; color: var(--text); }
 
-  /* Почему */
-  .why .cols {
+  /* Если оставить как есть */
+  .stay .wrap {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 7fr;
     gap: 80px;
-    margin-top: 64px;
+    align-items: start;
   }
-  .why p { color: var(--text-soft); }
-  .why .highlight {
-    margin-top: 32px;
-    padding-top: 32px;
+  .stay-steps {
+    list-style: none;
+    position: relative;
+    padding-left: 44px;
+  }
+  .stay-steps::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 14px; bottom: 14px;
+    width: 1px;
+    background: linear-gradient(var(--mist), var(--gold));
+  }
+  .stay-steps li {
+    position: relative;
+    padding: 18px 0;
+    font-size: 1.3rem;
+    line-height: 1.45;
+  }
+  .stay-steps li::before {
+    content: '';
+    position: absolute;
+    left: -44px; top: 29px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--milk);
+    border: 1px solid var(--mist);
+  }
+  .stay-steps li:nth-child(1) { color: rgba(23, 54, 63, 0.55); }
+  .stay-steps li:nth-child(2) { color: rgba(23, 54, 63, 0.7); }
+  .stay-steps li:nth-child(3) { color: rgba(23, 54, 63, 0.85); }
+  .stay-steps li:nth-child(4) { color: var(--text); }
+  .stay-steps em { font-style: italic; font-weight: 400; }
+  .stay-steps .finale {
+    margin-top: 18px;
+    padding-top: 34px;
     border-top: 1px solid var(--line);
-    font-size: 1.5rem;
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
     font-style: italic;
-    line-height: 1.35;
+    line-height: 1.3;
     color: var(--text);
   }
-  .why .strong { font-weight: 400; color: var(--text); }
+  .stay-steps .finale::before {
+    top: 50px;
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* Кто я */
+  .about .wrap {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 96px;
+    align-items: center;
+  }
+  .portrait {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  .portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translate(20px, 20px);
+    border: 1px solid rgba(184, 134, 59, 0.6);
+    border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+  }
+  .arch {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+  }
+  .arch svg, .arch img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .badge {
+    position: absolute;
+    right: -24px; bottom: 48px;
+    width: 128px; height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--teal);
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  }
+  .badge b { font-size: 2.4rem; font-weight: 400; line-height: 1; }
+  .badge span {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .about h2 { margin-bottom: 32px; }
+  .about p { color: rgba(250, 246, 239, 0.8); }
+  .about .insight {
+    margin-top: 36px;
+    padding-left: 28px;
+    border-left: 1px solid var(--gold);
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--milk);
+  }
+  .path {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(250, 246, 239, 0.14);
+    list-style: none;
+    counter-reset: path;
+  }
+  .path li {
+    counter-increment: path;
+    font-size: 15px;
+    line-height: 1.45;
+    color: rgba(250, 246, 239, 0.75);
+  }
+  .path li::before {
+    content: counter(path, decimal-leading-zero);
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--gold);
+  }
+  .path li b { display: block; margin-bottom: 4px; font-weight: 400; color: var(--milk); }
+
+  /* Моя методика */
+  .method { background: var(--cream); }
+  .method h2 { max-width: 16em; }
+  .method .lead { margin-top: 40px; font-size: 1.25rem; color: var(--text-soft); }
+  .method .cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+  }
+  .method .col {
+    padding-top: 28px;
+    border-top: 2px solid var(--gold);
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+  .method .col span {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--gold-deep);
+  }
 
   /* Как я работаю */
   .how { text-align: center; }
@@ -365,8 +511,15 @@
     .fact + .fact { padding-left: 18px; }
     .fact b { font-size: 1.5rem; }
     .fact span { font-size: 11px; letter-spacing: 0.12em; }
-    .for-whom .wrap, .why .cols, .steps .cards { grid-template-columns: 1fr; gap: 40px; }
-    .why .cols, .steps .cards, .results ol { margin-top: 40px; }
+    .for-whom .wrap, .stay .wrap, .about .wrap, .method .cols, .steps .cards { grid-template-columns: 1fr; gap: 40px; }
+    .steps .cards, .results ol { margin-top: 40px; }
+    .stay-steps li { font-size: 1.15rem; }
+    .about .wrap { gap: 64px; }
+    .portrait { max-width: 300px; margin: 0 auto; }
+    .portrait::before { transform: translate(12px, 12px); }
+    .badge { right: -12px; bottom: 32px; width: 104px; height: 104px; }
+    .badge b { font-size: 2rem; }
+    .path { grid-template-columns: 1fr; gap: 24px; }
     .for-whom .quote { padding-left: 22px; }
     .card { padding: 40px 28px 44px; }
     .results li { grid-template-columns: 56px 1fr; font-size: 1.15rem; padding: 24px 0; }
@@ -389,7 +542,8 @@
     <a class="brand" href="#top">Рамиль Абязов</a>
     <nav class="nav">
       <a href="#for-whom">Для кого</a>
-      <a href="#how">Как я работаю</a>
+      <a href="#about">Обо мне</a>
+      <a href="#method">Методика</a>
       <a href="#steps">Что будет</a>
       <a href="#results">Результат</a>
     </nav>
@@ -492,30 +646,93 @@
     <div class="wrap">
       <div class="reveal">
         <div class="eyebrow">Для кого</div>
-        <p class="quote">«Я уже не знаю, чего хочу сама»</p>
+        <p class="quote">«Я точно знаю, чего хотят муж, дети, мама. А чего хочу <span class="accent">я</span>?!»</p>
       </div>
       <div class="reveal">
         <p>Для тех, кто в отношениях привык подстраиваться, сглаживать углы, быть удобным, но однажды заметил в себе эту мысль.</p>
-        <p><strong>И особенно для тех, кто уже много понял про себя, а легче не стало.</strong></p>
+        <p><strong>Для тех, кто уже много понял про себя, а легче, к сожалению, не стало.</strong></p>
       </div>
     </div>
   </section>
 
-  <section class="why" id="why">
+  <section class="stay" id="stay">
     <div class="wrap">
       <div class="reveal">
-        <div class="eyebrow">Почему так происходит</div>
-        <h2>Почему привычные способы перестают работать</h2>
+        <div class="eyebrow">Если оставить как есть</div>
+        <h2>А что, если оставить всё как есть?</h2>
+      </div>
+      <ol class="stay-steps">
+        <li class="reveal">Сначала это просто усталость.</li>
+        <li class="reveal">Потом раздражение на близких, которое сложно объяснить.</li>
+        <li class="reveal">Тихо копится обида: «Я столько для всех, а для <em>меня</em>?»</li>
+        <li class="reveal">Отношения становятся похожими на <em>соседство</em>.</li>
+        <li class="finale reveal">А жизнь продолжает идти.<br>Только <span class="accent">не ваша</span>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="about dark" id="about">
+    <div class="wrap">
+      <div class="portrait reveal">
+        <div class="arch">
+          <!-- Сюда позже встанет фото: <img src="foto.jpg" alt="Рамиль Абязов"> -->
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="a-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1F4854"/>
+                <stop offset="0.55" stop-color="#789BB0"/>
+                <stop offset="0.8" stop-color="#E4DCCB"/>
+              </linearGradient>
+              <radialGradient id="a-glow" cx="200" cy="330" r="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#F4EEE3" stop-opacity="0.8"/>
+                <stop offset="0.35" stop-color="#D9B272" stop-opacity="0.3"/>
+                <stop offset="1" stop-color="#B8863B" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="a-sea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#557F90"/>
+                <stop offset="1" stop-color="#17363F"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#a-sky)"/>
+            <rect width="400" height="500" fill="url(#a-glow)"/>
+            <circle cx="200" cy="322" r="46" fill="#F6EBD6"/>
+            <path fill="#6A8EA0" d="M0,330 L60,290 L120,318 L170,280 L230,326 L290,286 L350,312 L400,280 L400,390 L0,390 Z"/>
+            <path fill="#2F5766" d="M0,360 L70,330 L140,368 L200,352 L270,374 L330,340 L400,362 L400,390 L0,390 Z"/>
+            <rect y="388" width="400" height="112" fill="url(#a-sea)"/>
+            <g fill="#EBD3A4">
+              <rect x="160" y="398" width="80" height="2" rx="1" opacity="0.7"/>
+              <rect x="150" y="410" width="100" height="2" rx="1" opacity="0.5"/>
+              <rect x="172" y="424" width="56" height="2" rx="1" opacity="0.35"/>
+            </g>
+          </svg>
+        </div>
+        <div class="badge"><b>15+</b><span>лет пути</span></div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Кто я</div>
+        <h2>Меня зовут <span class="accent">Рамиль Абязов</span></h2>
+        <p>Мой путь длиною более 15 лет начинался с глубокого изучения психологии, метапрограммирования и системного психоанализа. Этот путь естественным образом привёл меня к духовному развитию, самотрансформации и исследованию природы сознания.</p>
+        <p class="insight">После долгих лет поиска истины и ответов на вопросы о природе человека я пережил глубокое трансцендентное состояние <span class="accent">самадхи</span> — опыт пробуждения сознания, полностью изменивший моё восприятие жизни и процессы взаимодействия с людьми.</p>
+        <ol class="path">
+          <li><b>Психология</b>Метапрограммирование и системный психоанализ</li>
+          <li><b>Духовное развитие</b>Самотрансформация и исследование сознания</li>
+          <li><b>Самадхи</b>Опыт пробуждения сознания</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="method" id="method">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Моя методика</div>
+        <h2>Это не теория и не набор мотивационных советов</h2>
+        <p class="lead">Это возможность:</p>
       </div>
       <div class="cols">
-        <div class="reveal">
-          <p>Психическое современной женщины хочет несравнимо больше, чем 1000 лет назад: любви, свободы, заботы, реализации, смысла, и всё это сразу. Желаний стало так много, что за ними сложно успеть.</p>
-          <p>Сюда же постоянное давление со стороны общества: что должна и чего не должна делать женщина. Возникает естественное чувство, что вы потерялись: внутри слишком громко, чтобы расслышать своё. Где же та самая свобода выбора и воли?</p>
-        </div>
-        <div class="reveal">
-          <p class="strong">Психология может объяснить, откуда это взялось. Но этого мало. Многие замечают: понимать причины и жить иначе — это разные вещи.</p>
-          <p class="highlight">Ответ на вопрос «чего я хочу на самом деле» лежит глубже, чем разбор прошлого.</p>
-        </div>
+        <div class="col reveal"><span>01</span>Встретиться с собой настоящей</div>
+        <div class="col reveal"><span>02</span>Обрести внутреннюю опору и ясность</div>
+        <div class="col reveal"><span>03</span>Увидеть истинные причины своих жизненных ситуаций</div>
       </div>
     </div>
   </section>
