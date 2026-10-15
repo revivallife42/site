@@ -279,6 +279,26 @@
     border-color: var(--gold);
   }
 
+  /* Почему */
+  .why { background: var(--cream); }
+  .why .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+  }
+  .why p { color: var(--text-soft); }
+  .why .highlight {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--text);
+  }
+  .why .strong { font-weight: 400; color: var(--text); }
+
   /* Кто я */
   .about .wrap {
     display: grid;
@@ -511,8 +531,8 @@
     .fact + .fact { padding-left: 18px; }
     .fact b { font-size: 1.5rem; }
     .fact span { font-size: 11px; letter-spacing: 0.12em; }
-    .for-whom .wrap, .stay .wrap, .about .wrap, .method .cols, .steps .cards { grid-template-columns: 1fr; gap: 40px; }
-    .steps .cards, .results ol { margin-top: 40px; }
+    .for-whom .wrap, .why .cols, .stay .wrap, .about .wrap, .method .cols, .steps .cards { grid-template-columns: 1fr; gap: 40px; }
+    .why .cols, .steps .cards, .results ol { margin-top: 40px; }
     .stay-steps li { font-size: 1.15rem; }
     .about .wrap { gap: 64px; }
     .portrait { max-width: 300px; margin: 0 auto; }
@@ -668,6 +688,25 @@
         <li class="reveal">Отношения становятся похожими на <em>соседство</em>.</li>
         <li class="finale reveal">А жизнь продолжает идти.<br>Только <span class="accent">не ваша</span>.</li>
       </ol>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Почему так происходит</div>
+        <h2>Почему привычные способы перестают работать</h2>
+      </div>
+      <div class="cols">
+        <div class="reveal">
+          <p>Психическое современной женщины хочет несравнимо больше, чем 1000 лет назад: любви, свободы, заботы, реализации, смысла, и всё это сразу. Желаний стало так много, что за ними сложно успеть.</p>
+          <p>Сюда же постоянное давление со стороны общества: что должна и чего не должна делать женщина. Возникает естественное чувство, что вы потерялись: внутри слишком громко, чтобы расслышать своё. Где же та самая свобода выбора и воли?</p>
+        </div>
+        <div class="reveal">
+          <p class="strong">Психология может объяснить, откуда это взялось. Но этого мало. Многие замечают: понимать причины и жить иначе — это разные вещи.</p>
+          <p class="highlight">Ответ на вопрос «чего я хочу на самом деле» лежит глубже, чем разбор прошлого.</p>
+        </div>
+      </div>
     </div>
   </section>
 
